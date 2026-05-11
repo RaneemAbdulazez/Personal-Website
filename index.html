@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raneem Ghalion | AI Privacy &amp; Implementation Consultant</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dbd7",
+                    "primary-container": "#065f46",
+                    "primary": "#004532",
+                    "on-tertiary-fixed": "#3b0908",
+                    "outline-variant": "#bec9c2",
+                    "secondary": "#006a61",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#8bd6b6",
+                    "on-surface-variant": "#3f4944",
+                    "on-secondary-fixed-variant": "#005049",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#823f3a",
+                    "tertiary": "#652925",
+                    "on-secondary-container": "#006f66",
+                    "surface": "#f7faf6",
+                    "secondary-fixed-dim": "#6bd8cb",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#00201d",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb3ac",
+                    "on-tertiary-container": "#ffb4ad",
+                    "on-surface": "#181c1a",
+                    "surface-variant": "#e0e3df",
+                    "secondary-fixed": "#89f5e7",
+                    "on-primary-fixed": "#002116",
+                    "surface-container-high": "#e6e9e5",
+                    "on-background": "#181c1a",
+                    "secondary-container": "#86f2e4",
+                    "on-primary-fixed-variant": "#00513b",
+                    "inverse-on-surface": "#eef2ed",
+                    "surface-container-low": "#f1f4f0",
+                    "on-primary-container": "#8bd6b7",
+                    "surface-tint": "#1b6b51",
+                    "inverse-surface": "#2d312f",
+                    "surface-container-highest": "#e0e3df",
+                    "surface-bright": "#f7faf6",
+                    "primary-fixed": "#a6f2d1",
+                    "outline": "#6f7973",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "on-tertiary-fixed-variant": "#73332f",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "background": "#f7faf6",
+                    "tertiary-fixed": "#ffdad6",
+                    "surface-container": "#ecefeb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "section-gap": "128px",
+                    "container-max": "1200px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-md": ["Manrope"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "headline-lg": ["Libre Caslon Text"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "body-lg": ["Manrope"],
+                    "label-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow {
+            shadow: 0 10px 30px rgba(26, 26, 26, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm">
+<div class="max-w-[1200px] mx-auto px-8 md:px-16 flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="shield_person">shield_person</span>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Raneem Ghalion</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-sm text-label-sm" href="#home">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300 font-label-sm text-label-sm" href="#services">Services</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300 font-label-sm text-label-sm" href="#case-studies">Case Studies</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300 font-label-sm text-label-sm" href="#journal">Journal</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300 font-label-sm text-label-sm" href="#about">About</a>
+</nav>
+<button class="bg-primary-container text-on-primary px-6 py-3 rounded-xl font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all duration-200">
+                Book a Call
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="min-h-[819px] flex flex-col items-center justify-center text-center px-6 py-section-gap" id="home">
+<div class="max-w-4xl mx-auto space-y-8">
+<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm uppercase tracking-wider">AI Privacy Specialist</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary">
+                    AI that helps your business move faster — without putting client data at risk.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Implementing robust AI privacy audits, secure local AI infrastructure, and executive training to ensure your organization adopts intelligence responsibly.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center pt-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300">
+                        Book a Call
+                    </button>
+<button class="border border-primary text-primary px-10 py-5 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all duration-300">
+                        Read the Journal
+                    </button>
+</div>
+</div>
+</section>
+<!-- Trust Strip -->
+<section class="max-w-[1200px] mx-auto px-8 md:px-16 pb-section-gap">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 border-y border-outline-variant py-12">
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="lock">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-widest">AI Privacy</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="dns">dns</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-widest">Local AI</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-widest">AI Implementation</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-widest">Team Training</span>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="max-w-[1200px] mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-primary">Most businesses are using AI before they have rules.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Shadow AI is the biggest threat to modern enterprise data security. When employees use unvetted public AI tools for sensitive client work, they create invisible leaks in your digital perimeter. I help you transition from accidental use to intentional, secure implementation.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="text-primary font-bold mt-1">—</span>
+<span class="font-body-md text-on-surface-variant">Identify and mitigate "Shadow AI" across departments.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-primary font-bold mt-1">—</span>
+<span class="font-body-md text-on-surface-variant">Prevent accidental training on proprietary data.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-primary font-bold mt-1">—</span>
+<span class="font-body-md text-on-surface-variant">Ensure compliance with emerging international AI regulations.</span>
+</li>
+</ul>
+</div>
+<div class="relative aspect-square bg-white rounded-2xl shadow-xl overflow-hidden border border-outline-variant">
+<img alt="Cybersecurity and Privacy" class="w-full h-full object-cover grayscale opacity-80" data-alt="A sophisticated close-up photograph of high-end digital hardware components and glowing circuitry. The image is captured in a minimalist style with a clean, high-key lighting setup that matches a premium professional aesthetic. Muted deep green and charcoal tones dominate the palette, creating a sense of technical expertise and quiet authority. The focus is sharp on the intricate textures of the components, symbolizing modern privacy and security infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhMWesNjEZ7PMMDH3K_T80GV-UVRxFHcranHYNJvgjJDrJWY1sPDHDKdTdKV_s2ic8e-GAnKDObWnouKlFDyp02pFeIdHUD_casuU-LtYcqwKI2HZoA1q9KWhsr6R7RAQ9eOv2HkTJPzOE8HdOVa5oQwt-kPp1LJjTdqwSojyVF6AJf8JYAMcUs1u9o_QQfyJ-PM_lCHLrmaGEk92qAQTZkCr5tkXygda2DRhQJES0ElPo6UAJg1_eTKfArc6o42rhKWjjxXXOoZxR"/>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap px-8 md:px-16 max-w-[1200px] mx-auto" id="services">
+<div class="mb-16 text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Core Consulting Services</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Focused expertise to bridge the gap between AI capability and organizational safety.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-6" data-icon="policy">policy</span>
+<h3 class="font-headline-md text-2xl text-primary mb-4">Privacy Audit</h3>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">A deep-dive analysis of your current AI usage and data flow to identify vulnerabilities.</p>
+<a class="text-primary font-bold font-label-sm text-sm uppercase tracking-wider inline-flex items-center gap-2 group" href="#">
+                        Learn More <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-6" data-icon="storage">storage</span>
+<h3 class="font-headline-md text-2xl text-primary mb-4">Local AI Tools</h3>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">LLMs running on your own hardware, so data never leaves your control. Currently building a local AI tool for document formatting and generation.</p>
+<a class="text-primary font-bold font-label-sm text-sm uppercase tracking-wider inline-flex items-center gap-2 group" href="#">
+                        Learn More <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-6" data-icon="account_tree">account_tree</span>
+<h3 class="font-headline-md text-2xl text-primary mb-4">Workflow Design</h3>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">Integrating AI into your existing pipelines to maximize speed while maintaining ethics.</p>
+<a class="text-primary font-bold font-label-sm text-sm uppercase tracking-wider inline-flex items-center gap-2 group" href="#">
+                        Learn More <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<span class="material-symbols-outlined text-primary text-3xl mb-6" data-icon="school">school</span>
+<h3 class="font-headline-md text-2xl text-primary mb-4">Team Training</h3>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">Empowering your workforce to use generative tools effectively and safely.</p>
+<a class="text-primary font-bold font-label-sm text-sm uppercase tracking-wider inline-flex items-center gap-2 group" href="#">
+                        Learn More <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section class="py-section-gap bg-surface-container-lowest" id="case-studies">
+<div class="max-w-[1200px] mx-auto px-8 md:px-16">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Recent Engagements</h2>
+<p class="text-on-surface-variant">AI privacy awareness training and implementation work I've delivered for organizations across healthcare, property management, and community services.</p>
+</div>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<!-- Case 1 -->
+<article class="group">
+<div class="aspect-[16/10] bg-surface-container-lowest rounded-2xl mb-6 overflow-hidden border border-outline-variant flex items-center justify-center p-12">
+<img alt="Marda Management logo" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" src="Marda.png"/>
+</div>
+<div class="space-y-4">
+<span class="font-label-sm text-label-sm text-primary uppercase bg-primary/5 px-3 py-1 rounded">Privacy Training</span>
+<h3 class="font-headline-md text-2xl text-primary leading-tight">AI Privacy Awareness Training — Marda Management</h3>
+<p class="text-on-surface-variant body-md">Delivered AI privacy awareness training for a property management team, covering safe day-to-day use of generative AI tools without exposing tenant and client data.</p>
+</div>
+</article>
+<!-- Case 2 -->
+<article class="group">
+<div class="aspect-[16/10] bg-surface-container-lowest rounded-2xl mb-6 overflow-hidden border border-outline-variant flex items-center justify-center p-12">
+<img alt="Victory Reproductive Care logo" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" src="VRC.png"/>
+</div>
+<div class="space-y-4">
+<span class="font-label-sm text-label-sm text-primary uppercase bg-primary/5 px-3 py-1 rounded">In Progress</span>
+<h3 class="font-headline-md text-2xl text-primary leading-tight">AI Privacy Awareness Training — Victory Reproductive Care</h3>
+<p class="text-on-surface-variant body-md">Ongoing engagement with a reproductive healthcare clinic, building a privacy-first framework for AI use in a setting where patient confidentiality is non-negotiable.</p>
+</div>
+</article>
+<!-- Case 3 -->
+<article class="group">
+<div class="aspect-[16/10] bg-surface-container-lowest rounded-2xl mb-6 overflow-hidden border border-outline-variant flex items-center justify-center p-12">
+<img alt="WEST — Women's Enterprise Skills Training of Windsor logo" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" src="WEST.png"/>
+</div>
+<div class="space-y-4">
+<span class="font-label-sm text-label-sm text-primary uppercase bg-primary/5 px-3 py-1 rounded">In Progress</span>
+<h3 class="font-headline-md text-2xl text-primary leading-tight">Privacy Awareness &amp; AI Training — WEST</h3>
+<p class="text-on-surface-variant body-md">Privacy awareness and AI training for <a class="underline hover:text-primary-container" href="https://www.westofwindsor.com/" rel="noopener" target="_blank">Women's Enterprise Skills Training of Windsor</a>, equipping their team and community participants to use AI confidently and safely.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Journal Section -->
+<section class="py-section-gap max-w-[1200px] mx-auto px-8 md:px-16" id="journal">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-outline-variant pb-8">
+<h2 class="font-headline-lg text-headline-lg text-primary">The AI Journal</h2>
+<p class="text-on-surface-variant max-w-sm">Weekly insights on the intersection of privacy, implementation, and enterprise AI.</p>
+</div>
+<div class="space-y-12">
+<!-- Journal Card 1 -->
+<div class="grid md:grid-cols-12 gap-8 group cursor-pointer">
+<div class="md:col-span-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-2">March 14, 2024</span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-widest">Policy</span>
+</div>
+<div class="md:col-span-7 space-y-3">
+<h3 class="font-headline-md text-3xl text-primary group-hover:underline underline-offset-4 decoration-1">The High Cost of Shadow AI: Why Employees Are Your Biggest Security Risk</h3>
+<p class="text-on-surface-variant body-lg leading-relaxed">As public LLMs become ubiquitous, the risk of data leakage grows exponentially. Here is how to create a culture of safe AI usage...</p>
+</div>
+<div class="md:col-span-2 flex items-center md:justify-end">
+<span class="material-symbols-outlined text-3xl text-primary transition-transform group-hover:translate-x-2" data-icon="north_east">north_east</span>
+</div>
+</div>
+<!-- Journal Card 2 -->
+<div class="grid md:grid-cols-12 gap-8 group cursor-pointer border-t border-outline-variant pt-12">
+<div class="md:col-span-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-2">February 28, 2024</span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-widest">Technical</span>
+</div>
+<div class="md:col-span-7 space-y-3">
+<h3 class="font-headline-md text-3xl text-primary group-hover:underline underline-offset-4 decoration-1">Running Llama 3 on Your Own Hardware: A Strategic Overview for CIOs</h3>
+<p class="text-on-surface-variant body-lg leading-relaxed">Local infrastructure is no longer just for developers. We explore why enterprises are moving their AI workloads on-premise...</p>
+</div>
+<div class="md:col-span-2 flex items-center md:justify-end">
+<span class="material-symbols-outlined text-3xl text-primary transition-transform group-hover:translate-x-2" data-icon="north_east">north_east</span>
+</div>
+</div>
+<!-- Journal Card 3 -->
+<div class="grid md:grid-cols-12 gap-8 group cursor-pointer border-t border-outline-variant pt-12">
+<div class="md:col-span-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-2">February 15, 2024</span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-widest">Strategy</span>
+</div>
+<div class="md:col-span-7 space-y-3">
+<h3 class="font-headline-md text-3xl text-primary group-hover:underline underline-offset-4 decoration-1">From Experiment to Implementation: Measuring the ROI of Ethical AI</h3>
+<p class="text-on-surface-variant body-lg leading-relaxed">How to move past the "wow" factor of generative AI and start tracking real business outcomes while staying compliant...</p>
+</div>
+<div class="md:col-span-2 flex items-center md:justify-end">
+<span class="material-symbols-outlined text-3xl text-primary transition-transform group-hover:translate-x-2" data-icon="north_east">north_east</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap bg-surface-container-low" id="about">
+<div class="max-w-[1200px] mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-20 items-center">
+<div class="order-2 md:order-1 relative">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+<img alt="Portrait of Raneem Ghalion" class="w-full h-full object-cover" src="raneem.jpg"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-primary rounded-2xl -z-10 opacity-10"></div>
+</div>
+<div class="order-1 md:order-2 space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-primary">Thoughtful implementation for modern leaders.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        I'm Raneem Ghalion. I've spent the last 6 years working in AI — as a machine learning and deep learning developer, as a trainer coaching other developers, and as co-founder of Adopli AI. More recently I've focused on AI privacy: helping organizations adopt AI without exposing client data, and building local AI tools that keep sensitive work on your own hardware.
+                    </p>
+<p class="font-body-md text-on-surface-variant italic">
+                        "Technology is only as powerful as the trust you build into it. My mission is to ensure your business uses AI to build that trust, not break it."
+                    </p>
+<div class="pt-4 flex items-center gap-6">
+<div class="text-center">
+<span class="block font-headline-md text-3xl text-primary">6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Years in AI</span>
+</div>
+<div class="w-px h-12 bg-outline-variant"></div>
+<div class="text-center">
+<span class="block font-headline-md text-3xl text-primary">Co-Founder</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Adopli AI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-gap px-8 md:px-16 text-center max-w-4xl mx-auto">
+<div class="bg-primary p-16 rounded-[2rem] text-on-primary shadow-2xl relative overflow-hidden">
+<!-- Abstract Pattern Overlays -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/3"></div>
+<div class="relative z-10 space-y-8">
+<h2 class="font-headline-lg text-headline-lg leading-tight">Ready to use AI more safely in your business?</h2>
+<p class="font-body-lg text-body-lg opacity-90 max-w-xl mx-auto">Let’s schedule a 30-minute discovery call to audit your current AI usage and identify quick wins for security.</p>
+<button class="bg-white text-primary px-12 py-5 rounded-xl font-bold text-lg hover:bg-surface-bright transition-all duration-300 transform hover:-translate-y-1">
+                        Book a Call
+                    </button>
+<p class="text-sm font-label-sm opacity-70">Strictly confidential. No obligations.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-16 border-t border-outline-variant">
+<div class="max-w-[1200px] mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="shield_person">shield_person</span>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Raneem Ghalion</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Raneem Ghalion. AI Privacy &amp; Implementation Consultant.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

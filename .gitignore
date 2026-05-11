@@ -1,0 +1,19 @@
+# Secrets — DO NOT push
+.mcp.json
+
+# Stitch source files (reference only)
+.stitch/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Local server logs
+*.log
+
+# Windows zone-identifier alternate data streams
+*:Zone.Identifier
