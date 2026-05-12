@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChatGPT vs Local LLM for Sensitive Business Data: How to Decide | Raneem Ghalion</title>
+<meta name="description" content="A practical framework for Canadian businesses deciding between ChatGPT and a local LLM for sensitive work. PIPEDA exposure, hardware reality, costs, and when each tool is the right answer."/>
+<meta name="author" content="Raneem Ghalion"/>
+<link rel="canonical" href="https://www.raneemghalion.com/journal/chatgpt-vs-local-llm-sensitive-business-data.html"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Raneem Ghalion"/>
+<meta property="og:title" content="ChatGPT vs Local LLM for Sensitive Business Data"/>
+<meta property="og:description" content="A practical framework for Canadian businesses deciding between ChatGPT and a local LLM for sensitive work. PIPEDA exposure, hardware reality, and when each tool is the right answer."/>
+<meta property="og:url" content="https://www.raneemghalion.com/journal/chatgpt-vs-local-llm-sensitive-business-data.html"/>
+<meta property="og:image" content="https://www.raneemghalion.com/raneem.jpg"/>
+<meta property="article:author" content="Raneem Ghalion"/>
+<meta property="article:published_time" content="2026-05-12"/>
+<meta property="article:section" content="AI Privacy"/>
+<meta property="article:tag" content="ChatGPT, Local LLM, Gemma, AI privacy, PIPEDA, Canadian business"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ChatGPT vs Local LLM for Sensitive Business Data"/>
+<meta name="twitter:description" content="A practical framework for Canadian businesses deciding between ChatGPT and a local LLM."/>
+<meta name="twitter:image" content="https://www.raneemghalion.com/raneem.jpg"/>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23065f46'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia, serif' font-size='20' fill='white'%3ER%3C/text%3E%3C/svg%3E"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ChatGPT vs Local LLM for Sensitive Business Data: How to Decide",
+  "description": "A practical framework for Canadian businesses deciding between ChatGPT and a local LLM for sensitive work. PIPEDA exposure, hardware reality, costs, and when each tool is the right answer.",
+  "image": "https://www.raneemghalion.com/raneem.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Raneem Ghalion",
+    "url": "https://www.raneemghalion.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Raneem Ghalion",
+    "url": "https://www.raneemghalion.com/"
+  },
+  "datePublished": "2026-05-12",
+  "dateModified": "2026-05-12",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.raneemghalion.com/journal/chatgpt-vs-local-llm-sensitive-business-data.html"
+  },
+  "keywords": "ChatGPT vs local LLM, local AI Canada, Gemma 4, on-premise AI, AI privacy, PIPEDA AI compliance"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.raneemghalion.com/"},
+    {"@type":"ListItem","position":2,"name":"Journal","item":"https://www.raneemghalion.com/#journal"},
+    {"@type":"ListItem","position":3,"name":"ChatGPT vs Local LLM for Sensitive Business Data"}
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = { darkMode:"class", theme:{extend:{
+    colors:{"surface-dim":"#d8dbd7","primary-container":"#065f46","primary":"#004532","outline-variant":"#bec9c2","secondary":"#006a61","error":"#ba1a1a","on-surface-variant":"#3f4944","on-primary":"#ffffff","surface":"#f7faf6","on-secondary-container":"#006f66","secondary-container":"#86f2e4","surface-container-lowest":"#ffffff","on-surface":"#181c1a","surface-variant":"#e0e3df","surface-container-high":"#e6e9e5","on-background":"#181c1a","surface-container-low":"#f1f4f0","outline":"#6f7973","background":"#f7faf6","surface-container":"#ecefeb","surface-bright":"#f7faf6"},
+    borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},
+    spacing:{gutter:"32px","section-gap":"128px","container-max":"1200px","margin-desktop":"64px",unit:"8px","margin-mobile":"24px"},
+    fontFamily:{"display-lg":["Libre Caslon Text"],"body-md":["Manrope"],"display-lg-mobile":["Libre Caslon Text"],"headline-lg":["Libre Caslon Text"],"headline-md":["Libre Caslon Text"],"body-lg":["Manrope"],"label-sm":["Manrope"]},
+    fontSize:{"display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"400"}],"body-md":["16px",{lineHeight:"1.5",fontWeight:"400"}],"display-lg-mobile":["40px",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-lg":["48px",{lineHeight:"1.2",fontWeight:"400"}],"headline-md":["32px",{lineHeight:"1.3",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],"label-sm":["14px",{lineHeight:"1.0",letterSpacing:"0.05em",fontWeight:"600"}]}
+  }}}
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+  .prose-article p { margin-bottom: 1.5rem; }
+  .prose-article h2 { margin-top: 4rem; margin-bottom: 1.5rem; }
+  .prose-article h3 { margin-top: 2.5rem; margin-bottom: 1rem; }
+  .prose-article ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+  .prose-article ul li { margin-bottom: 0.5rem; list-style-type: none; position: relative; padding-left: 1rem; }
+  .prose-article ul li::before { content: "—"; position: absolute; left: -0.5rem; color: #004532; font-weight: bold; }
+  .prose-article a { color: #004532; text-decoration: underline; text-underline-offset: 3px; }
+  .prose-article a:hover { color: #065f46; }
+  .prose-article blockquote { border-left: 3px solid #004532; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: #3f4944; }
+  .prose-article table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+  .prose-article th, .prose-article td { padding: 0.75rem 1rem; border-bottom: 1px solid #bec9c2; text-align: left; }
+  .prose-article th { background: #f1f4f0; font-weight: 600; }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-[1200px] mx-auto px-8 md:px-16 flex justify-between items-center h-20">
+    <a class="flex items-center gap-3" href="../index.html">
+      <span class="material-symbols-outlined text-primary text-2xl">shield_person</span>
+      <span class="font-headline-md text-headline-md text-primary tracking-tight">Raneem Ghalion</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all font-label-sm text-label-sm" href="../index.html#services">Services</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all font-label-sm text-label-sm" href="../index.html#case-studies">Case Studies</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all font-label-sm text-label-sm" href="../index.html#journal">Journal</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all font-label-sm text-label-sm" href="../index.html#about">About</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all font-label-sm text-label-sm" href="../docbee.html">DocBee</a>
+    </nav>
+    <a class="bg-primary-container text-on-primary px-6 py-3 rounded-xl font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all" href="https://calendar.app.google/z7YbuQHZ5aht2SSD8" rel="noopener" target="_blank">Book a Call</a>
+  </div>
+</header>
+
+<main class="pt-20">
+
+  <article class="py-section-gap px-8 md:px-16 max-w-3xl mx-auto">
+
+    <nav class="font-label-sm text-label-sm text-on-surface-variant mb-12" aria-label="Breadcrumb">
+      <a class="hover:text-primary" href="../index.html">Home</a> <span class="mx-2">/</span>
+      <a class="hover:text-primary" href="../index.html#journal">Journal</a> <span class="mx-2">/</span>
+      <span class="text-primary">ChatGPT vs Local LLM</span>
+    </nav>
+
+    <header class="space-y-6 mb-16">
+      <div class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+        <span class="text-primary font-bold">Technical</span>
+        <span>·</span>
+        <time datetime="2026-05-12">May 12, 2026</time>
+        <span>·</span>
+        <span>10 min read</span>
+      </div>
+      <h1 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">ChatGPT vs Local LLM for Sensitive Business Data: How to Decide</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">Most Canadian business owners I work with have asked a version of the same question: <em>"Can I just paste this client document into ChatGPT?"</em> Here's the framework I use with them — and why the honest answer is usually no.</p>
+    </header>
+
+    <div class="prose-article font-body-lg text-body-lg text-on-surface leading-relaxed">
+
+      <p>The default move when generative AI lands in a small business is to open ChatGPT and paste in whatever document is on the desk. It's fast, it's free, and it produces real value. The trouble is that the documents on the desks of most Canadian SMBs — patient charts, lease agreements, financial statements, grant applications — are exactly the kinds of documents that shouldn't be pasted into a public AI service in the first place.</p>
+
+      <p>This isn't a hypothetical risk. It's already happening on every team I've worked with. The question isn't whether ChatGPT and tools like it have a place in your business — they do. The question is which kinds of work belong in the cloud, and which kinds need to stay on your own hardware. This is the framework I walk clients through.</p>
+
+      <h2>The trade-off in one sentence</h2>
+
+      <p>Cloud AI — ChatGPT, Claude, Gemini, Copilot — gives you the best raw capability at the cost of sending your data to someone else's machine. A local LLM running on your own hardware gives you full data control at the cost of running a slightly less capable model. Everything else in this debate is a footnote to that sentence.</p>
+
+      <p>Because the trade-off is so clean, the decision tends to be clean too. Once you accept that some categories of information must never leave your network, the question stops being "which is better?" and becomes "which tool do I use for this specific document?"</p>
+
+      <h2>What actually happens when you paste a client document into ChatGPT</h2>
+
+      <p>Three things happen the moment that document leaves your network:</p>
+
+      <ul>
+        <li>It travels across the public internet to a third-party data centre, usually in the United States.</li>
+        <li>It is stored, at minimum temporarily, by the AI provider. Their policies tell you what they say they do with it. Their actual practice is harder to verify.</li>
+        <li>It becomes subject to the legal jurisdiction of wherever the servers live — including subpoenas, government data requests, and any future breach at the vendor.</li>
+      </ul>
+
+      <p>For Canadian businesses, this matters under PIPEDA. Personal information about clients, patients, tenants, or employees is regulated. PIPEDA doesn't forbid you from sending it across a border — but it requires that you handle it with care, get appropriate consent, and remain accountable for what happens to it. "I pasted it into ChatGPT and now I have no idea what they did with it" is not a defensible position if a privacy commissioner ever asks.</p>
+
+      <p>Most enterprise versions of these tools (ChatGPT Enterprise, Claude for Work, Microsoft Copilot for Business) have policies that say your data is not used for model training and is retained only briefly. Those policies are real and they matter. They don't change the fact that your data has left your network, that you're trusting a vendor to honour the policy, and that you are still exposed to breaches at their end and policy changes you don't control.</p>
+
+      <h2>When ChatGPT is the right tool</h2>
+
+      <p>I want to be clear: cloud AI is not the villain. For the right work, it is the best tool available. Use it for:</p>
+
+      <ul>
+        <li>Public information — research, learning, summarizing news articles.</li>
+        <li>Drafting work that will be public anyway — blog posts, marketing copy, social media drafts.</li>
+        <li>Brainstorming, outlining, generic templates.</li>
+        <li>Code that doesn't reveal proprietary business logic.</li>
+        <li>Anything you would be fine seeing leaked.</li>
+      </ul>
+
+      <p>The simplest test I give teams: <em>"Would you be comfortable if this exact text appeared on your competitor's blog tomorrow?"</em> If yes, cloud AI is fine. If no, you have a different problem.</p>
+
+      <h2>When you need a local LLM instead</h2>
+
+      <p>Local AI is the right answer when the data itself is the asset you're trying to protect. The clearest cases I see in my Canadian client work:</p>
+
+      <ul>
+        <li>Patient records, intake forms, clinical notes — anything covered by health information custodian rules in your province.</li>
+        <li>Tenant data, lease drafts, building incident reports — anything where individuals trusted you with personal information.</li>
+        <li>Legal documents, client correspondence, contracts under negotiation.</li>
+        <li>Financial records, internal memos, board materials.</li>
+        <li>Anything you're under contract not to disclose to third parties — which often quietly includes "and not to AI vendors."</li>
+      </ul>
+
+      <p>For all of these, a local LLM — a language model that runs entirely on your own hardware — is the architectural answer. The model lives on your machine. Documents go in, output comes out, and nothing crosses your network boundary. There is no vendor between you and the AI.</p>
+
+      <h2>"But how good are local LLMs, really?"</h2>
+
+      <p>This is the question every client asks, and it deserves a straight answer.</p>
+
+      <p>Open-weights models like Gemma (Google's open model family) and Llama (Meta's) have made dramatic progress over the past two years. For most office work — drafting, rewriting, formatting, summarizing, answering questions about documents — modern small and mid-sized open models are very close to ChatGPT-class quality. The gap is real, but it's narrower than most people assume.</p>
+
+      <p>Where cloud models still win clearly: long-context reasoning across many documents, complex multi-step problem solving, and the most demanding coding tasks. Where local models are now genuinely good enough: most of what a small business actually does with AI in a given week.</p>
+
+      <p>The way I frame it for clients: a well-chosen local LLM running on appropriate hardware will do about 80–90% of what your team uses ChatGPT for today, just as well. The remaining 10–20% — the truly demanding work — you can still send to cloud AI, with the data discipline to make sure nothing sensitive goes with it.</p>
+
+      <h2>The decision framework</h2>
+
+      <p>Four questions, in order, for any document or task:</p>
+
+      <table>
+        <thead>
+          <tr><th>Question</th><th>If yes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Would this leak harm a client, patient, employee, or your business?</td><td>Stop. Local AI only.</td></tr>
+          <tr><td>Is this personal information under PIPEDA?</td><td>Stop. Local AI only.</td></tr>
+          <tr><td>Are you contractually forbidden from sharing it with third parties?</td><td>Stop. Local AI only.</td></tr>
+          <tr><td>Can you redact or abstract the sensitive parts before using cloud AI?</td><td>Cloud AI is fine, with discipline.</td></tr>
+        </tbody>
+      </table>
+
+      <p>If the answer to all four is "no harm, not personal, not contractually restricted, no redaction needed" — go ahead and use ChatGPT. If any of the first three is yes, local AI is your default. The fourth question is the practical escape valve: most teams can do useful work in the cloud by redacting names, numbers, and identifiers before pasting. It just has to be a habit, not an afterthought.</p>
+
+      <h2>What "running a local LLM" actually looks like</h2>
+
+      <p>The mental picture most business owners have is a row of black servers humming in a closet. That's not what a small-business local AI setup looks like today.</p>
+
+      <p>For most Canadian SMBs I work with, local AI starts with a single dedicated machine — sometimes a well-spec'd laptop, sometimes a small desktop with a consumer GPU. Models in the 4-billion to 12-billion parameter range run comfortably on this kind of hardware and handle the bulk of office work. Larger models exist if you need them, but you can get a long way before you need to think about a dedicated server.</p>
+
+      <p>The software side has also improved dramatically. Tools like Ollama, LM Studio, and a growing crop of small-business-friendly local AI apps mean you don't need a data engineer to get started. You install something, point it at a folder of documents, and start working. For people who want a turnkey local AI tool specifically for documents, I'm building <a href="../docbee.html">DocBee</a> — a local AI document generator and formatter running on Gemma, designed for Canadian SMBs that need privacy without engineering overhead.</p>
+
+      <h2>The cost reality</h2>
+
+      <p>One of the surprises in this conversation: local AI is often cheaper, not more expensive, once you cross a small team size.</p>
+
+      <p>ChatGPT Enterprise and similar cloud AI plans are billed per user, per month. For a 20-person team, the annual cost runs into five figures. A capable local AI setup is a one-time hardware purchase — typically a few thousand dollars total — plus minor ongoing maintenance. The crossover point comes fast.</p>
+
+      <p>For very small teams (under five users), cloud AI may still be cheaper, especially if the work is light. For everyone else, the financial argument tends to favour local once you've accounted for a full year of subscriptions across the whole team.</p>
+
+      <h2>A practical hybrid approach</h2>
+
+      <p>The teams I see succeed with this don't pick one tool and stick to it. They run a hybrid:</p>
+
+      <ul>
+        <li>Local LLM as the default for any work involving real client information, internal documents, or anything sensitive.</li>
+        <li>Cloud AI explicitly approved for marketing copy, research, brainstorming, and any work that's already public-facing.</li>
+        <li>A one-page team policy that names which tool to use for which kinds of work — so people aren't making the judgment call alone every time.</li>
+      </ul>
+
+      <p>This is the architecture I recommend to almost every Canadian small business, clinic, and non-profit I work with. It captures the productivity wins of generative AI without forcing your team to choose between speed and privacy.</p>
+
+      <h2>The verdict</h2>
+
+      <p>If your business handles regulated, personal, or otherwise sensitive information — and almost every Canadian SMB does — your default tool for AI work should be a local LLM, not ChatGPT. Cloud AI has a place in your stack, but it should be the exception, used deliberately for work that doesn't carry privacy risk.</p>
+
+      <p>The good news: the technology to run local AI is now mature, affordable, and accessible to teams that don't have a dedicated IT department. The privacy guarantee you get from a model running on your own hardware is technical and architectural — not a vendor promise — and that's the kind of guarantee Canadian privacy laws were built to favour.</p>
+
+      <p>The harder news: figuring out which workflows belong where, sizing the hardware, picking the right model, and getting your team to actually use it requires either time you don't have or someone who's done it before. That's the work.</p>
+
+      <hr class="my-16 border-outline-variant"/>
+
+      <p class="text-on-surface-variant"><strong>If this resonates and you're thinking about local AI for your team</strong>, two things you can do today: <a href="../docbee.html">try DocBee</a>, the local AI document tool I'm building for Canadian SMBs, or <a href="https://calendar.app.google/z7YbuQHZ5aht2SSD8" rel="noopener" target="_blank">book a 30-minute call</a> to talk through what a <a href="../services/local-ai-setup.html">local AI setup</a> would look like for your specific situation.</p>
+
+    </div>
+  </article>
+
+  <!-- Final CTA -->
+  <section class="py-section-gap px-8 md:px-16 text-center max-w-4xl mx-auto">
+    <div class="bg-primary p-16 rounded-[2rem] text-on-primary shadow-2xl">
+      <div class="space-y-8">
+        <h2 class="font-headline-lg text-headline-lg leading-tight">Thinking about local AI for your team?</h2>
+        <p class="font-body-lg text-body-lg opacity-90 max-w-xl mx-auto">A 30-minute call. We'll talk through your team size, the kinds of documents you handle, and whether local AI makes sense for your situation.</p>
+        <a class="inline-block bg-white text-primary px-12 py-5 rounded-xl font-bold text-lg hover:bg-surface-bright transition-all duration-300 transform hover:-translate-y-1" href="https://calendar.app.google/z7YbuQHZ5aht2SSD8" rel="noopener" target="_blank">Book a Call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-surface-container-lowest py-16 border-t border-outline-variant">
+  <div class="max-w-[1200px] mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+    <div class="flex flex-col items-center md:items-start gap-4">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-2xl">shield_person</span>
+        <span class="font-headline-md text-headline-md text-primary tracking-tight">Raneem Ghalion</span>
+      </div>
+      <p class="font-body-md text-on-surface-variant text-center md:text-left">© 2026 Raneem Ghalion. AI Privacy &amp; Implementation Consultant — Windsor, Ontario.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+      <a class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm" href="https://www.linkedin.com/in/raneem-ghalion" rel="me noopener" target="_blank">LinkedIn</a>
+      <a class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm" href="https://www.instagram.com/raneemghalionai/" rel="me noopener" target="_blank">Instagram</a>
+      <a class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm" href="https://www.tiktok.com/@raneem.ghalion" rel="me noopener" target="_blank">TikTok</a>
+      <a class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm" href="https://github.com/RaneemAbdulazez" rel="me noopener" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+</body></html>
