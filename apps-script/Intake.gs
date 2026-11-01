@@ -8,22 +8,20 @@
  *   3. Emails the user a brief confirmation ("I'll be in touch within 1–2 business days").
  *
  * --- SETUP ---
- * 1. Create a Google Sheet (e.g. "Offers Intake"). Copy its ID from the URL:
- *      docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
- * 2. https://script.google.com/  →  New project  →  paste this file into Code.gs
+ * 1. https://script.google.com/  →  New project  →  paste this file into Code.gs
  *    (the file name inside Apps Script is always Code.gs; the .gs extension here is for source control).
- * 3. Project Settings (gear icon) → Script Properties → Add property:
- *      key:   SHEET_ID
- *      value: <the sheet ID from step 1>
- *    (Optional) Add OWNER_EMAIL if you want notifications to go somewhere
- *    other than the address below.
- * 4. Deploy → New deployment →
+ * 2. Deploy → New deployment →
  *      Type: Web app
  *      Execute as: Me (your-account)
  *      Who has access: Anyone
  *    Click Deploy, authorize, copy the Web app URL.
- * 5. Paste that URL into offers.html as APPS_SCRIPT_URL
+ * 3. Paste that URL into offers.html as APPS_SCRIPT_URL
  *    (replace the "PASTE_INTAKE_APPS_SCRIPT_URL_HERE" placeholder near the bottom of the file).
+ *
+ * The first submission creates a Google Sheet called "Offers Intake" in your Drive.
+ * To use an existing sheet instead, add a Script Property SHEET_ID with its ID.
+ * (Optional) Add a Script Property OWNER_EMAIL if notifications should go somewhere
+ * other than the address below.
  *
  * Quotas: consumer Gmail accounts can send 100 emails/day via MailApp.
  * Workspace accounts: 1500/day. More than enough for an intake form.
@@ -91,10 +89,13 @@ function doGet(e) {
 function getSheet() {
   const props = PropertiesService.getScriptProperties();
   const sheetId = props.getProperty('SHEET_ID');
-  if (!sheetId) {
-    throw new Error('Missing SHEET_ID in Script Properties. See the setup notes at the top of this file.');
+  let ss;
+  if (sheetId) {
+    ss = SpreadsheetApp.openById(sheetId);
+  } else {
+    ss = SpreadsheetApp.create('Offers Intake');
+    props.setProperty('SHEET_ID', ss.getId());
   }
-  const ss = SpreadsheetApp.openById(sheetId);
   let sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);

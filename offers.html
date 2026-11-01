@@ -273,7 +273,7 @@
         </div>
 
         <div class="hidden bg-error-container text-on-error-container px-5 py-4 rounded-xl font-body-md" id="intake-error" role="alert">
-          <strong>Something went wrong.</strong> <span data-msg></span>
+          <strong>Something went wrong.</strong> <span data-msg></span> You can still reach me: <a class="underline font-bold" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3heXPgp6LUDWbSYpZ08fuklLyEQBhHBLl6BU2yIlj-gU4uIIxKnSi5wAmYjBIN30X79febtU-p" rel="noopener" target="_blank">book a free 30-min call</a>.
         </div>
 
         <button class="w-full btn btn--dark active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300" type="submit">
@@ -378,7 +378,7 @@
 <script>
   // ===== Intake form backend =====
   // Paste your deployed Google Apps Script Web App URL here (see apps-script/Intake.gs setup notes):
-  const APPS_SCRIPT_URL = 'PASTE_INTAKE_APPS_SCRIPT_URL_HERE';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylVQ-RbsmkVsHJ3B_QO4mK614V-0ddQ2jfTQJBr16iMtt4DfCQgnzVfCCdOtIuNcSn/exec';
 
   // ----- Tier prefill: when a tier card "Request" button is clicked,
   //       set the tier dropdown before the browser scrolls to #intake.
@@ -406,7 +406,7 @@
     if (!form.reportValidity()) return;
 
     if (APPS_SCRIPT_URL.startsWith('PASTE_')) {
-      showError('Form backend not configured yet. Paste the Apps Script URL into offers.html.');
+      showError("This form isn't accepting messages right now, and nothing you typed was sent.");
       return;
     }
 
