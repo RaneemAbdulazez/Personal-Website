@@ -340,6 +340,14 @@ a { color: inherit; text-decoration: none; }
 .page-hero .btn--ghost { color: var(--paper); border-color: rgba(255,255,255,0.42); background: rgba(0,0,0,0.15); }
 .page-hero .btn--ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
+.page-hero--short { min-height: clamp(420px, 56svh, 560px); }
+.page-hero__lede { margin-top: 16px; max-width: 58ch; font-size: 1.0625rem; line-height: 1.55; color: rgba(255,255,255,0.84); }
+.crumb-sep { margin-inline: 8px; }
+.journal__list { max-width: 1200px; margin-inline: auto; padding-inline: 32px; }
+@media (min-width: 768px) { .journal__list { padding-inline: 64px; } }
+@media (max-width: 479px) { .journal__list { padding-inline: 16px; } }
+.journal__list .post { margin-top: 0; }
+
 /* Tidy the older card markup on inner pages */
 .prose-article h2 { font-weight: 400; letter-spacing: -0.025em; }
 .material-symbols-outlined { font-weight: 300; }

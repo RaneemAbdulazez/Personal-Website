@@ -43,6 +43,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.raneemghalion.com/journal/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
     <loc>https://www.raneemghalion.com/journal/chatgpt-vs-local-llm-sensitive-business-data.html</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
