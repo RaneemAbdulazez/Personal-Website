@@ -17,3 +17,6 @@ Thumbs.db
 
 # Windows zone-identifier alternate data streams
 *:Zone.Identifier
+
+# Node (no build step; @vercel/analytics npm package is unused by the static site)
+node_modules/
