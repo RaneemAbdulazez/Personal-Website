@@ -32,7 +32,7 @@
 const OWNER_EMAIL_DEFAULT = 'ranem.a.ghalion@gmail.com';
 const SHEET_NAME = 'Intake';
 const SENDER_NAME = 'Raneem Ghalion';
-const CALENDAR_URL = 'https://calendar.app.google/z7YbuQHZ5aht2SSD8';
+const CALENDAR_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3heXPgp6LUDWbSYpZ08fuklLyEQBhHBLl6BU2yIlj-gU4uIIxKnSi5wAmYjBIN30X79febtU-p';
 
 function doPost(e) {
   try {
