@@ -1,0 +1,41 @@
+# Settings for the writing interface at /admin. Saving a post commits to main, which publishes it.
+backend:
+  name: github
+  repo: RaneemAbdulazez/Personal-Website
+  branch: main
+
+media_folder: /assets/img/journal
+public_folder: /assets/img/journal
+
+collections:
+  - name: journal
+    label: Journal
+    label_singular: Post
+    folder: /content/journal
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    sortable_fields:
+      fields: [date, title]
+      default: { field: date, direction: descending }
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Short description
+        name: description
+        widget: text
+        hint: One or two sentences. Shown on the Journal page and in Google results.
+      - { label: Date, name: date, widget: datetime, type: date }
+      - { label: Category, name: category, widget: string, default: Technical }
+      - label: Cover image
+        name: cover
+        widget: image
+        required: false
+        hint: Optional. Shown behind the title. Without one, the standard Journal image is used.
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+        hint: Turn this on to save without publishing.
+      - { label: Text, name: body, widget: richtext }

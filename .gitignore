@@ -18,5 +18,10 @@ Thumbs.db
 # Windows zone-identifier alternate data streams
 *:Zone.Identifier
 
-# Node (no build step; @vercel/analytics npm package is unused by the static site)
+# Node. The site needs no npm install: the journal build uses scripts/vendor/ only
 node_modules/
+
+# Journal post pages are generated from content/journal/ on every deploy
+journal/*.html
+!journal/index.html
+!journal/chatgpt-vs-local-llm-sensitive-business-data.html
