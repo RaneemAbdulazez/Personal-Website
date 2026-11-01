@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>DocBee — Local AI document generator & formatter</title>
-<meta name="description" content="DocBee is a local AI document generator and formatter powered by Gemma 4. Drafts, rewrites, and formats your documents on your own hardware — nothing sent to the cloud."/>
+<title>DocBee: Local AI document generator & formatter</title>
+<meta name="description" content="DocBee is a local AI document generator and formatter powered by Gemma 4. Drafts, rewrites, and formats your documents on your own hardware, nothing sent to the cloud."/>
 <meta name="author" content="Raneem Ghalion"/>
 <link rel="canonical" href="https://www.raneemghalion.com/docbee.html"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="DocBee"/>
-<meta property="og:title" content="DocBee — Local AI document generator & formatter"/>
+<meta property="og:title" content="DocBee: Local AI document generator & formatter"/>
 <meta property="og:description" content="A local AI tool that drafts and formats documents on your own hardware. Powered by Gemma 4. Your data never leaves your machine."/>
 <meta property="og:url" content="https://www.raneemghalion.com/docbee.html"/>
 <meta property="og:image" content="https://www.raneemghalion.com/DocBee.png"/>
@@ -19,7 +19,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="DocBee — Local AI document generator & formatter"/>
+<meta name="twitter:title" content="DocBee: Local AI document generator & formatter"/>
 <meta name="twitter:description" content="A local AI tool that drafts and formats documents on your own hardware. Powered by Gemma 4."/>
 <meta name="twitter:image" content="https://www.raneemghalion.com/DocBee.png"/>
 
@@ -44,79 +44,48 @@
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..600&amp;family=Michroma&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="DocBee.png" rel="icon" type="image/png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-dim":"#d8dbd7","primary-container":"#065f46","primary":"#004532",
-          "outline-variant":"#bec9c2","secondary":"#006a61","error":"#ba1a1a",
-          "on-surface-variant":"#3f4944","on-primary":"#ffffff","surface":"#f7faf6",
-          "on-secondary-container":"#006f66","secondary-container":"#86f2e4",
-          "on-tertiary":"#ffffff","surface-container-lowest":"#ffffff",
-          "on-surface":"#181c1a","surface-variant":"#e0e3df","surface-container-high":"#e6e9e5",
-          "on-background":"#181c1a","on-primary-container":"#8bd6b7",
-          "surface-container-low":"#f1f4f0","outline":"#6f7973","on-secondary":"#ffffff",
-          "background":"#f7faf6","surface-container":"#ecefeb","surface-bright":"#f7faf6"
-        },
-        borderRadius: { DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px" },
-        spacing: {
-          gutter:"32px", "section-gap":"128px", "container-max":"1200px",
-          "margin-desktop":"64px", unit:"8px", "margin-mobile":"24px"
-        },
-        fontFamily: {
-          "display-lg":["Libre Caslon Text"], "body-md":["Manrope"],
-          "display-lg-mobile":["Libre Caslon Text"], "headline-lg":["Libre Caslon Text"],
-          "headline-md":["Libre Caslon Text"], "body-lg":["Manrope"], "label-sm":["Manrope"]
-        },
-        fontSize: {
-          "display-lg":["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"400"}],
-          "body-md":["16px",{lineHeight:"1.5",fontWeight:"400"}],
-          "display-lg-mobile":["40px",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"400"}],
-          "headline-lg":["48px",{lineHeight:"1.2",fontWeight:"400"}],
-          "headline-md":["32px",{lineHeight:"1.3",fontWeight:"400"}],
-          "body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],
-          "label-sm":["14px",{lineHeight:"1.0",letterSpacing:"0.05em",fontWeight:"600"}]
-        }
-      }
-    }
-  }
-</script>
+<script src="assets/tailwind.config.js"></script>
 <style>
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
 </style>
+<link href="assets/site.css" rel="stylesheet"/>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;r.classList.add('js-anim');setTimeout(function(){r.classList.remove('js-anim')},2500)}</script>
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body class="bg-background text-on-surface font-body-md selection:bg-primary/10">
+<body class="bg-background text-on-surface font-body-md has-solid-header">
 
 <!-- Header -->
-<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm">
-  <div class="max-w-[1200px] mx-auto px-8 md:px-16 flex justify-between items-center h-20">
-    <a class="flex items-center gap-3" href="docbee.html">
-      <img alt="DocBee logo" class="h-9 w-9 object-contain" src="DocBee.png"/>
-      <span class="font-headline-md text-headline-md text-primary tracking-tight">DocBee</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8">
-      <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-sm text-label-sm" href="#what-it-does">What it does</a>
-      <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-sm text-label-sm" href="#how-it-works">How it works</a>
-      <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-sm text-label-sm" href="index.html">By Raneem Ghalion</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="site-header__bar">
+    <nav aria-label="Primary" class="site-nav">
+        <a href="#what-it-does">What it does</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="index.html">By Raneem Ghalion</a>
     </nav>
-    <a class="bg-primary-container text-on-primary px-6 py-3 rounded-xl font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all duration-200" href="#install">
-      Get DocBee
-    </a>
+    <a class="wordmark" href="docbee.html">DocBee</a>
+    <div class="site-header__actions">
+      <a class="btn btn--outline-light btn--sm" href="#install">Get DocBee</a>
+      <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button"><span></span></button>
+    </div>
   </div>
+  <nav aria-label="Mobile" class="mobile-nav" hidden id="mobile-nav">
+      <a href="#what-it-does">What it does</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="index.html">By Raneem Ghalion</a>
+      <a class="btn btn--light" href="#install">Get DocBee</a>
+  </nav>
 </header>
 
-<main class="pt-20">
+<main id="main">
 
   <!-- Hero -->
   <section class="min-h-[640px] flex flex-col items-center justify-center text-center px-6 py-section-gap">
@@ -124,16 +93,16 @@
       <img alt="DocBee logo" class="h-44 w-44 md:h-60 md:w-60 mx-auto object-contain" src="DocBee.png"/>
       <span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm uppercase tracking-wider">Local AI · Powered by Gemma 4</span>
       <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary">
-        Generate and format documents — without your data ever leaving your machine.
+        Generate and format documents without your data ever leaving your machine.
       </h1>
       <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
         DocBee is a local AI tool that drafts, rewrites, and formats your documents directly on your hardware. No cloud uploads. No third-party servers. Just Gemma 4, running where your work lives.
       </p>
       <div class="flex flex-col md:flex-row gap-4 justify-center items-center pt-4">
-        <a class="bg-primary text-on-primary px-10 py-5 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300" href="#install">
+        <a class="btn btn--dark" href="#install">
           Get DocBee
         </a>
-        <a class="border border-primary text-primary px-10 py-5 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all duration-300" href="#what-it-does">
+        <a class="btn btn--ghost" href="#what-it-does">
           See what it does
         </a>
       </div>
@@ -144,7 +113,7 @@
   <section class="py-section-gap px-8 md:px-16 max-w-[1200px] mx-auto" id="what-it-does">
     <div class="mb-16 text-center max-w-2xl mx-auto">
       <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Built for documents you can't afford to leak.</h2>
-      <p class="text-on-surface-variant">Client contracts, internal reports, patient notes, financial records — the documents that need AI assistance the most are usually the ones you can't paste into a public chat.</p>
+      <p class="text-on-surface-variant">Client contracts, internal reports, patient notes, financial records: the documents that need AI assistance the most are usually the ones you can't paste into a public chat.</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
@@ -155,7 +124,7 @@
       <div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
         <span class="material-symbols-outlined text-primary text-3xl mb-6">format_align_left</span>
         <h3 class="font-headline-md text-2xl text-primary mb-4">Format</h3>
-        <p class="text-on-surface-variant font-body-md flex-grow">Clean up structure, headings, and tone across long documents — without rewriting your voice.</p>
+        <p class="text-on-surface-variant font-body-md flex-grow">Clean up structure, headings, and tone across long documents, without rewriting your voice.</p>
       </div>
       <div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
         <span class="material-symbols-outlined text-primary text-3xl mb-6">cloud_off</span>
@@ -165,7 +134,7 @@
       <div class="bg-white p-10 rounded-2xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col">
         <span class="material-symbols-outlined text-primary text-3xl mb-6">memory</span>
         <h3 class="font-headline-md text-2xl text-primary mb-4">Gemma 4</h3>
-        <p class="text-on-surface-variant font-body-md flex-grow">Powered by Google's open Gemma 4 model — strong reasoning and writing quality at sizes that run on a laptop.</p>
+        <p class="text-on-surface-variant font-body-md flex-grow">Powered by Google's open Gemma 4 model, strong reasoning and writing quality at sizes that run on a laptop.</p>
       </div>
     </div>
   </section>
@@ -247,7 +216,7 @@
           <strong>Something went wrong.</strong> <span data-msg></span>
         </div>
 
-        <button class="w-full bg-primary text-on-primary px-10 py-5 rounded-xl font-bold text-lg hover:shadow-lg active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300" type="submit">
+        <button class="w-full btn btn--dark active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300" type="submit">
           Send
         </button>
 
@@ -264,11 +233,10 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-surface-container-lowest py-12 border-t border-outline-variant">
+<footer class="docbee-footer bg-surface-container-lowest py-12 border-t border-outline-variant">
   <div class="max-w-[1200px] mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-6">
     <div class="flex items-center gap-3">
-      <img alt="DocBee logo" class="h-8 w-8 object-contain" src="DocBee.png"/>
-      <span class="font-headline-md text-headline-md text-primary tracking-tight">DocBee</span>
+      <span class="wordmark">DocBee</span>
     </div>
     <p class="font-body-md text-on-surface-variant text-center md:text-left">A local AI tool by <a class="underline hover:text-primary" href="index.html">Raneem Ghalion</a>.</p>
     <div class="flex gap-6">
@@ -331,5 +299,8 @@
   }
 </script>
 
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="assets/site.js"></script>
 </body>
 </html>
